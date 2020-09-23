@@ -26,4 +26,9 @@ print(products)
 
 # Think: How to 存取二維清單
 # products[0][0]
-print('商品名稱: ', products[0][0], '商品價格: ', products[0][1])
+#print('商品名稱: ', products[0][0], '商品價格: ', products[0][1])
+
+# for loop 印出清單中的每一個商品名稱跟價格
+for p in products: 
+    #print(p)
+    print(p[0], '的價格: ', p[1])
