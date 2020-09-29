@@ -35,7 +35,8 @@ for p in products:
     print(p[0], '的價格: ', p[1])
 
 # 寫入檔案, 檔案名稱常使用 .csv file, csv file 需用逗點做區隔
-with open('products.csv', 'w') as f:
+with open('products.csv', 'w', encoding='utf-8') as f:
+    f.write('商品, 價錢\n')
     for p in products:
         f.write(p[0] + ',' + str(p[1]) + '\n')
 
