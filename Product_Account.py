@@ -1,21 +1,29 @@
+# 新增檢查檔案是否存在
+import os # operating system
+
+products = []
+
+#檢查檔案是否存在
+if os.path.isfile('products.csv'):
+    print('Yes!!')
+    
 # 讀取檔案 (取出商品名稱)
 # 讀取檔案要注意換行符號要去除掉 strip
-# use continue to ignore the specific word
-products = []
-with open('products.csv', 'r', encoding='utf-8') as f: 
-    for line in f:
-        #split_s = line.strip().split(',')
-        #split_s_name = split_s[0]
-        #split_s_price = split_s[1]
-        # can merge to do
-        if '商品,價格' in line: 
-            continue
-        split_s_name, split_s_price = line.strip().split(',')
-        products.append([split_s_name, split_s_price])
+# use continue to ignore the specific word    
+    with open('products.csv', 'r', encoding="utf-8") as f: 
+        for line in f:
+            #split_s = line.strip().split(',')
+            #split_s_name = split_s[0]
+            #split_s_price = split_s[1]
+            # can merge to do
+            if '商品,價格' in line: 
+                continue
+            split_s_name, split_s_price = line.strip().split(',')
+            products.append([split_s_name, split_s_price])
 
-print(products)
-
-
+    print(products)    
+else:
+    print('No!!!')
 
 
 # 1. GitHub 建立專案
@@ -28,6 +36,7 @@ print(products)
 # 先拿一個新的小清單, 然後再append到大清單
 
 #products = []
+# 讓使用者輸入
 while True:
     name = input('請輸入商品名稱: ')
     if name == 'q':
