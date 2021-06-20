@@ -90,13 +90,14 @@ def main():
         print(products)
     else: 
         print('找不到檔案!!')    
-
-    products = user_input(products)
-    print_products(products)
-    write_file('products.csv', products)
+        products = []
+        products = user_input(products)
+        print_products(products)
+        write_file('products.csv', products)
 
 #if __name__ == '__main__':
-main() # main function 程式進入點
+# main function 程式進入點
+main()
 
 
 
